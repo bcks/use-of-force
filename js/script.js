@@ -1,6 +1,6 @@
 
 
-var categories = ["Requires De-Escalation", "Has Force Continuum", "Bans Choking and Strangleholds", "Requires Warning Before Shooting", "Restricts Shooting at Moving Vehicles", "Requires Officers Exhaust All Means Before Shooting", "Duty to Intervene", "Requires Comprehensive Reporting" ];
+var categories = ["Requires De-Escalation", "Has Force Continuum", "Bans Chokeholds and Strangleholds", "Requires Warning Before Shooting", "Restricts Shooting at Moving Vehicles", "Requires Exhaust All Other Means Before Shooting", "Duty to Intervene", "Requires Comprehensive Reporting" ];
 
 var data = {};
 
@@ -51,7 +51,7 @@ function showData(id) {
 
 function renderStates(states, label) {
 	var output = '<table class="header-fixed">';
-	output += '<thead><tr><th class="first"><h3>'+label+'</h3></th><th><div>Requires<span><br></span> De-Escalation</div></th><th><div>Has Force<span><br></span> Continuum</div></th><th><div>Bans Choking<span><br></span> and Strangleholds</div></th><th><div>Requires Warning<span><br></span> Before Shooting</div></th><th><div>Restricts Shooting<span><br></span> at Moving Vehicles</div></th><th><div>Requires Officers Exhaust All<span><br></span> Means Before Shooting</div></th><th><div>Duty to<span><br></span> Intervene</div></th><th><div>Requires Comprehensive<span><br></span> Reporting</div></th></tr></thead>';
+	output += '<thead><tr><th class="first"><h3>'+label+'</h3></th><th><div>Requires<span><br></span> De-Escalation</div></th><th><div>Has Force<span><br></span> Continuum</div></th><th><div>Bans Chokeholds<span><br></span> and Strangleholds</div></th><th><div>Requires Warning<span><br></span> Before Shooting</div></th><th><div>Restricts Shooting<span><br></span> at Moving Vehicles</div></th><th><div>Requires Exhaust All<span><br></span> Other Means Before Shooting</div></th><th><div>Duty to<span><br></span> Intervene</div></th><th><div>Requires Comprehensive<span><br></span> Reporting</div></th></tr></thead>';
 	output += '<tbody>';
 
 	for (var s in states) {
@@ -130,7 +130,7 @@ getAjax(function(ajaxData){
 	atlas.sort();
 
 	var output = '';
-	output += renderStates(atlas, 'Use of Force Guidelines');
+	output += renderStates(atlas, 'Use of Force Policy');
   $('#output').html(output);
 
 });
