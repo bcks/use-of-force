@@ -1,6 +1,6 @@
 
 
-var categories = ["Affirms Value of Life", "Bans Chokeholds and Strangleholds", "Comprehensive Reporting", "Does the policy counsel minimization of the use of force?", "Duty to Intervene", "Is a Force Continuum or Matrix included?", "Moving Vehicles", "Posts Policy Online", "Requires De-Escalation", "Requires Exhaust Other Means Before Deadly Force", "Warn Before Shooting"];
+var categories = ["Requires De-Escalation", "Has Force Continuum", "Bans Choking and Strangleholds", "Requires Warning Before Shooting", "Restricts Shooting at Moving Vehicles", "Requires Officers Exhaust All Means Before Shooting", "Duty to Intervene", "Requires Comprehensive Reporting" ];
 
 var data = {};
 
@@ -13,15 +13,15 @@ function showData(id) {
 			infoBox += '<h2>'+data[d]['Police Department']+'</h2>';
 			infoBox += '<div class="row"><div class="label">Year of most recent policy</div><div class="info">'+data[d]['Year of most recent policy']+'</div></div>';
 			
-			for (var c in categories) {			
 				for (var k in data[id]) {
-					if (k.indexOf("(Policy Language) " + categories[c]) >= 0) {
+					if (k.indexOf("(Policy Language)") >= 0) {
+						var label = k.replace("(Policy Language)","").replace("(Y//N)","");
+						var text = data[id][k].replace("Yes. ","");
+						text= text.replace("No. ","");
 						infoBox += '<hr>';
-						infoBox += '<div class="row"><div class="label">' + categories[c] + '</div><div class="info">'+data[id][k]+'</div></div>';
+						infoBox += '<div class="row"><div class="label">' + label + '</div><div class="info">'+text+'</div></div>';
 					}	
 				}
-
-			}
 
 		}
 	}
@@ -51,7 +51,7 @@ function showData(id) {
 
 function renderStates(states, label) {
 	var output = '<table class="header-fixed">';
-	output += '<thead><tr><th class="first"><h3>'+label+'</h3></th><th><div>Affirms Value<span><br></span> of Life</div></th><th><div>Bans Chokeholds<span><br></span> and Strangleholds</div></th><th><div>Comprehensive<span><br></span> Reporting</div></th><th><div>Does the policy counsel<span><br></span> minimization of the use of force?</div></th><th><div>Duty to<span><br></span> Intervene</div></th><th><div>Is a Force Continuum<span><br></span> or Matrix included?</div></th><th><div>Moving<span><br></span> Vehicles</div></th><th><div>Posts Policy<span><br></span> Online</div></th><th><div>Requires<span><br></span> De-Escalation</div></th><th><div>Requires Exhaust Other<span><br></span> Means Before Deadly Force</div></th><th><div>Warn Before<span><br></span> Shooting</div></th></tr></thead>';
+	output += '<thead><tr><th class="first"><h3>'+label+'</h3></th><th><div>Requires<span><br></span> De-Escalation</div></th><th><div>Has Force<span><br></span> Continuum</div></th><th><div>Bans Choking<span><br></span> and Strangleholds</div></th><th><div>Requires Warning<span><br></span> Before Shooting</div></th><th><div>Restricts Shooting<span><br></span> at Moving Vehicles</div></th><th><div>Requires Officers Exhaust All<span><br></span> Means Before Shooting</div></th><th><div>Duty to<span><br></span> Intervene</div></th><th><div>Requires Comprehensive<span><br></span> Reporting</div></th></tr></thead>';
 	output += '<tbody>';
 
 	for (var s in states) {

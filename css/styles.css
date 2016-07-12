@@ -56,13 +56,13 @@ p.key span {
 	border-radius: 100%;
 }
 p .noText {
-	background-color: #cec;
-	color: #cec;
+	background-color: #ada;
+	color: #ada;
 }
 p .problematicText {
 	margin-left: 5em;
-  background-color: #ec997b;
-  color: #ec997b;
+  background-color: #eee;
+  color: #eee;
 }
 
 
@@ -90,10 +90,10 @@ td.state {
   text-overflow: ellipsis;  
 }
 td.off {
-	background-color: #cec;
+	background-color: #eee;
 }
 td.on {
-	background-color: #ec997b;
+	background-color: #ada;
 	-webkit-transition: background-color .25s;
 	transition: background-color .25s;
 }
