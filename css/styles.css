@@ -207,7 +207,10 @@ p.close-this a {
 
 .label {
 	color:#b2c6da;
-	width: 10%;
+}
+.label .category {
+	background-color:#4575a2;
+	padding: 3px;
 }
 .info {
 	color:#fff;
